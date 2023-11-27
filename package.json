@@ -1,0 +1,30 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js",
+    "dev": "jest test/index.test.js",
+    "test": "yarn node --experimental-vm-modules $(yarn bin jest)",
+    "test:cov": "yarn node --experimental-vm-modules $(yarn bin jest) --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renanponick/javascript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renanponick/javascript/issues"
+  },
+  "homepage": "https://github.com/renanponick/javascript#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.6.2",
+    "nodemon": "^3.0.1"
+  }
+}
