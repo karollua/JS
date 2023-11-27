@@ -1,39 +1,39 @@
-import RepositorioExercicio from "src/repositories/exercicios.js"
-
+import RepositorioExercicio from "../repositories/exercicios.js"
+ 
 const repositorio = new RepositorioExercicio()
 export default class ServicoExercicio {
-
+ 
     PegarUm(index){
-        return repositorio.PegarUm(index - 1)
+        return repositorio.PegarUm(index - 1);
     }
-
-    PegarTodos(){
-        return repositorio.PegarTodo()
+ 
+    PegarTodos(){ //Erro de português
+        return repositorio.PegarTodos();
     }
-
+ 
     Adicionar(nome){
-        if(nome) {
-          throw new Error("Favor preencher o nome.")
+        if(!nome) { //logica estava errada, adicionei o -!- para tornar ela certa
+          throw new Error("Favor preencher o nome.");
         }
-        repositorio.Adicionar(nome)
+        repositorio.Adicionar(nome);
     }
-
+ 
     Alterar(index, nome){
       if(!nome) {
-        throw new Error("Favor preencher o nome.")
+        throw new Error("Favor preencher o nome."); //Erro de português
       } else if(!index || isNaN(index)) {
-        throw new Error("Favor corretamente o index.")
+        throw new Error("Favor preencher corretamente o index.");
       }
-
-      repositorio.Adicionar(index - 1,nome)
+ 
+      repositorio.Alterar(index -1,nome); //Alterei o Adicionar, pois ele está fazendo uma alteração e não adicionar, além do parametro está errado
     }
-
+ 
     Deletar(index){
       if(!index || isNaN(index)) {
-        throw new Error("Favor corretamente o index.")
+        throw new Error("Favor preencher corretamente o index.");
       }
-
-      repositorio.Deletar(index+1)
+ 
+      repositorio.Deletar(index-1)
     }
-
+ 
 }

@@ -8,7 +8,7 @@ describe('Testes do primeiro exercício', () => {
    // Executado antes de TODOS os testes
    beforeAll(async () => {
       console.info('Iniciando TDD com jest!');
-   });
+   }); 
 
    // Executado após TODOS os testes
    afterAll(() => {
